@@ -11,9 +11,13 @@ const postSchema = new Schema(
           type: Number,
           required: false
       },
+      deaths: {
+          type: Number,
+          required: false
+      },
     description: {
       type: String,
-      required: true
+      required: false
     }
   },
   { timestamps: true }
