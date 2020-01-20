@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a2ea13e7-3680-4580-a93f-2ecae9975a72" name="Default Changelist" comment="" />
+    <list default="true" id="a2ea13e7-3680-4580-a93f-2ecae9975a72" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/controllers/feed.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/feed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/post.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1WdQwTqMr3ukeGiUfD0dx9czLE4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -48,7 +55,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1579477230399</updated>
-      <workItem from="1579477231464" duration="405000" />
+      <workItem from="1579477231464" duration="945000" />
     </task>
     <servers />
   </component>
@@ -64,25 +71,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="514" y="239" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579477376411" />
-    <state width="936" height="279" key="GridCell.Tab.0.bottom" timestamp="1579477581901">
+    <state width="936" height="279" key="GridCell.Tab.0.bottom" timestamp="1579478171725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579477581901" />
-    <state width="936" height="279" key="GridCell.Tab.0.center" timestamp="1579477581901">
+    <state width="936" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1579478171725" />
+    <state width="936" height="279" key="GridCell.Tab.0.center" timestamp="1579478171725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579477581901" />
-    <state width="936" height="279" key="GridCell.Tab.0.left" timestamp="1579477581901">
+    <state width="936" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1579478171725" />
+    <state width="936" height="279" key="GridCell.Tab.0.left" timestamp="1579478171725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579477581901" />
-    <state width="936" height="279" key="GridCell.Tab.0.right" timestamp="1579477581901">
+    <state width="936" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1579478171725" />
+    <state width="936" height="279" key="GridCell.Tab.0.right" timestamp="1579478171725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="936" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579477581901" />
+    <state width="936" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1579478171725" />
     <state x="0" y="166" key="SettingsEditor" timestamp="1579477245093">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1579477245093" />
+    <state x="1136" y="255" width="607" height="536" key="find.popup" timestamp="1579478169186">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1136" y="255" width="607" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579478169186" />
   </component>
 </project>
