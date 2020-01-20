@@ -39,10 +39,10 @@ exports.createPost = async (req, res, next) => {
   }
   const playername = req.body.playername;
   const kills = req.body.kills;
-  const content = req.body.content;
+  const description = req.body.description;
   const post = new Post({
     playername: playername,
-    content: content,
+    description: description,
     kills: kills
   });
   try {
@@ -94,7 +94,7 @@ exports.updatePost = async (req, res, next) => {
   }
   const playername = req.body.playername;
   const kills = req.body.kills;
-  const content = req.body.content;
+  const description = req.body.description;
 
   try {
     const post = await Post.findById(postId);
@@ -105,7 +105,7 @@ exports.updatePost = async (req, res, next) => {
     }
 
     post.playername = playername;
-    post.content = content;
+    post.description = description;
     post.kills = kills;
     const result = await post.save();
     io.getIO().emit('posts', { action: 'update', post: result });

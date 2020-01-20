@@ -17,7 +17,7 @@ router.post(
     body('playername')
       .trim()
       .isLength({ min: 5 }),
-    body('content')
+    body('description')
       .trim()
       .isLength({ min: 5 })
   ],
@@ -33,7 +33,7 @@ router.put(
     body('playername')
       .trim()
       .isLength({ min: 5 }),
-    body('content')
+    body('description')
       .trim()
       .isLength({ min: 5 })
   ],
