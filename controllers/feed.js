@@ -48,7 +48,8 @@ exports.createPost = async (req, res, next) => {
     deaths: deaths
   });
   try {
-    /*await post.save();
+    await post.save();
+    /*
     const user = await User.findById(req.userId);
     user.posts.push(post);
     await user.save();
@@ -78,6 +79,53 @@ exports.getPost = async (req, res, next) => {
       const error = new Error('Could not find post.');
       error.statusCode = 404;
       throw error;
+    }
+    res.status(200).json({ message: 'Post fetched.', post: post });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+};
+
+
+exports.verifyPlayer = async (req, res, next) => {
+  const playerName = req.params.playerName;
+
+  const post = await Post.findOne({ playername: playerName });
+  try {
+    if (!post) {
+
+      const description = req.body.description;
+      const post = new Post({
+        playername: playerName,
+        description: "Newly born player.",
+        kills: 0,
+        deaths: 0
+      });
+      try {
+        await post.save();
+        /*
+        const user = await User.findById(req.userId);
+        user.posts.push(post);
+        await user.save();
+        */
+
+        io.getIO().emit('posts', {
+          action: 'create',
+          post: { ...post._doc }
+        });
+        res.status(201).json({
+          message: 'Post created successfully!',
+          post: post
+        });
+      } catch (err) {
+        if (!err.statusCode) {
+          err.statusCode = 500;
+        }
+        next(err);
+      }
     }
     res.status(200).json({ message: 'Post fetched.', post: post });
   } catch (err) {
@@ -133,7 +181,6 @@ exports.updatePlayer = async (req, res, next) => {
     error.statusCode = 422;
     throw error;
   }
-  const playername = req.body.playername;
   const kills = req.body.kills;
   const deaths = req.body.deaths;
   const description = req.body.description;
@@ -146,7 +193,6 @@ exports.updatePlayer = async (req, res, next) => {
       throw error;
     }
 
-    post.playername = playername;
     post.description = description;
     post.kills = kills;
     post.deaths = deaths;

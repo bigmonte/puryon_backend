@@ -62,6 +62,11 @@ router.get(
     feedController.incrementDeaths
 );
 
+router.get(
+    '/post/update/verifyplayer/:playerName',
+    feedController.verifyPlayer
+);
+
 router.delete('/post/:postId', isAuth, feedController.deletePost);
 
 module.exports = router;
