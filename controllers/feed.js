@@ -38,10 +38,12 @@ exports.createPost = async (req, res, next) => {
     throw error;
   }
   const playername = req.body.playername;
+  const kills = req.body.kills;
   const content = req.body.content;
   const post = new Post({
     playername: playername,
     content: content,
+    kills: kills
   });
   try {
     await post.save();
@@ -91,6 +93,7 @@ exports.updatePost = async (req, res, next) => {
     throw error;
   }
   const playername = req.body.playername;
+  const kills = req.body.kills;
   const content = req.body.content;
 
   try {
@@ -103,6 +106,7 @@ exports.updatePost = async (req, res, next) => {
 
     post.playername = playername;
     post.content = content;
+    post.kills = kills;
     const result = await post.save();
     io.getIO().emit('posts', { action: 'update', post: result });
     res.status(200).json({ message: 'Post updated!', post: result });

@@ -7,6 +7,10 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
+      kills: {
+          type: Number,
+          required: false
+      },
     content: {
       type: String,
       required: true
