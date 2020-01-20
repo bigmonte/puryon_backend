@@ -27,6 +27,7 @@ router.get('/post/:postId', isAuth, feedController.getPost);
 
 router.put(
   '/post/:postId',
+  isAuth,
   [
     body('playername')
       .trim()
@@ -36,6 +37,19 @@ router.put(
       .isLength({ min: 5 })
   ],
   feedController.updatePost
+);
+
+router.put(
+  '/post/update/:playerName',
+  [
+    body('playername')
+      .trim()
+      .isLength({ min: 5 }),
+    body('description')
+      .trim()
+      .isLength({ min: 5 })
+  ],
+  feedController.updatePlayer
 );
 
 router.delete('/post/:postId', isAuth, feedController.deletePost);

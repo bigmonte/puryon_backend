@@ -125,6 +125,43 @@ exports.updatePost = async (req, res, next) => {
   }
 };
 
+exports.updatePlayer = async (req, res, next) => {
+  const playerName = req.params.playerName;
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    const error = new Error('Validation failed, entered data is incorrect.');
+    error.statusCode = 422;
+    throw error;
+  }
+  const playername = req.body.playername;
+  const kills = req.body.kills;
+  const deaths = req.body.deaths;
+  const description = req.body.description;
+
+  try {
+    const post = await Post.findOne({ playername: playerName });
+    if (!post) {
+      const error = new Error('Could not find post.');
+      error.statusCode = 404;
+      throw error;
+    }
+
+    post.playername = playername;
+    post.description = description;
+    post.kills = kills;
+    post.deaths = deaths;
+
+    const result = await post.save();
+    io.getIO().emit('posts', { action: 'update', post: result });
+    res.status(200).json({ message: 'Player updated!', post: result });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+};
+
 exports.deletePost = async (req, res, next) => {
   const postId = req.params.postId;
   try {
