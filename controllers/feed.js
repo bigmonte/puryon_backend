@@ -48,10 +48,12 @@ exports.createPost = async (req, res, next) => {
     deaths: deaths
   });
   try {
-    await post.save();
+    /*await post.save();
     const user = await User.findById(req.userId);
     user.posts.push(post);
     await user.save();
+    */
+
     io.getIO().emit('posts', {
       action: 'create',
       post: { ...post._doc }
