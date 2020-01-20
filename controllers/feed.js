@@ -162,6 +162,55 @@ exports.updatePlayer = async (req, res, next) => {
   }
 };
 
+exports.incrementKills = async (req, res, next) => {
+  const playerName = req.params.playerName;
+  try {
+    const post = await Post.findOne({ playername: playerName });
+
+    if (!post) {
+      const error = new Error('Could not find post.');
+      error.statusCode = 404;
+      throw error;
+    }
+    let kills = post.kills;
+    post.kills = kills + 1;
+
+    const result = await post.save();
+    io.getIO().emit('posts', { action: 'update', post: result });
+    res.status(200).json({ message: 'Player Kills Incremented!', post: result });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+};
+
+exports.incrementDeaths = async (req, res, next) => {
+  const playerName = req.params.playerName;
+  try {
+    const post = await Post.findOne({ playername: playerName });
+
+    if (!post) {
+      const error = new Error('Could not find player.');
+      error.statusCode = 404;
+      throw error;
+    }
+    let deaths = post.deaths;
+    post.deaths = deaths + 1;
+
+    const result = await post.save();
+    io.getIO().emit('posts', { action: 'update', post: result });
+    res.status(200).json({ message: 'Player Deaths Incremented!', post: result });
+  } catch (err) {
+    if (!err.statusCode) {
+      err.statusCode = 500;
+    }
+    next(err);
+  }
+};
+
+
 exports.deletePost = async (req, res, next) => {
   const postId = req.params.postId;
   try {

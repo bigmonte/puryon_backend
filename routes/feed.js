@@ -52,6 +52,16 @@ router.put(
   feedController.updatePlayer
 );
 
+router.get(
+    '/post/update/incrementkills/:playerName',
+    feedController.incrementKills
+);
+
+router.get(
+    '/post/update/incrementdeaths/:playerName',
+    feedController.incrementDeaths
+);
+
 router.delete('/post/:postId', isAuth, feedController.deletePost);
 
 module.exports = router;
