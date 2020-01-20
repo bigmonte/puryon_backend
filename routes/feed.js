@@ -14,7 +14,7 @@ router.post(
   '/post',
   isAuth,
   [
-    body('title')
+    body('playername')
       .trim()
       .isLength({ min: 5 }),
     body('content')
@@ -30,7 +30,7 @@ router.put(
   '/post/:postId',
   isAuth,
   [
-    body('title')
+    body('playername')
       .trim()
       .isLength({ min: 5 }),
     body('content')

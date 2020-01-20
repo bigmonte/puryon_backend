@@ -37,10 +37,10 @@ exports.createPost = async (req, res, next) => {
     error.statusCode = 422;
     throw error;
   }
-  const title = req.body.title;
+  const playername = req.body.playername;
   const content = req.body.content;
   const post = new Post({
-    title: title,
+    playername: playername,
     content: content,
   });
   try {
@@ -90,7 +90,7 @@ exports.updatePost = async (req, res, next) => {
     error.statusCode = 422;
     throw error;
   }
-  const title = req.body.title;
+  const playername = req.body.playername;
   const content = req.body.content;
 
   try {
@@ -101,7 +101,7 @@ exports.updatePost = async (req, res, next) => {
       throw error;
     }
 
-    post.title = title;
+    post.playername = playername;
     post.content = content;
     const result = await post.save();
     io.getIO().emit('posts', { action: 'update', post: result });
