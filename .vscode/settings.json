@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/4fff869a-8fd6-46a8-bc0d-39bb8ef2b72b/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/puryonbackend",
+    "appService.deploySubpath": ""
+}

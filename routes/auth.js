@@ -36,6 +36,8 @@ router.post('/login', authController.login);
 
 router.get('/status', isAuth, authController.getUserStatus);
 
+router.get('/name', isAuth, authController.getUserName);
+
 router.patch(
   '/status',
   isAuth,

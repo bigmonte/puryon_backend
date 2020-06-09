@@ -59,6 +59,8 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, data: data });
 });
 
+app.listen(8080);
+
 mongoose
   .connect(
     'mongodb+srv://dij1h2udh1i2:12d21d1212fg21hssdf43@lusomongo-tdfkg.mongodb.net/mine?retryWrites=true&w=majority'
