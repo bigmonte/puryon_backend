@@ -14,10 +14,18 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  experience: {
+    type: Number,
+    required : false
+  },
   status: {
     type: String,
     default: 'I am new!'
   },
+  qr: {
+    type: String
+  },
+
   posts: [
     {
       type: Schema.Types.ObjectId,
